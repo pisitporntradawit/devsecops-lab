@@ -5,12 +5,13 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"github.com/joho/godotenv"
+
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/joho/godotenv"
 )
 
 func Connect() (*pgxpool.Pool, error) {
-	err := godotenv.Load("../.env")
+	err := godotenv.Load(".env")
 	if err != nil {
 		log.Println("No .env file found")
 	}
@@ -28,5 +29,5 @@ func Connect() (*pgxpool.Pool, error) {
 
 	fmt.Println("✅ Connected to PostgreSQL!")
 
-	return conn,nil
+	return conn, nil
 }
