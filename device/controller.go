@@ -1,6 +1,9 @@
 package device
 
-import "github.com/jackc/pgx/v5/pgxpool"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/jackc/pgx/v5/pgxpool"
+)
 
 type Controller struct{
 	Service *Service
@@ -27,4 +30,12 @@ func NewModule(db *pgxpool.Pool) *Module{
 		Service: Service,
 		Repository: Repo,
 	}
+}
+
+func(ctrl Controller) GetDevices(c *gin.Context){
+
+}
+
+func(ctrl Controller) PostDevices(c *gin.Context){
+	
 }
